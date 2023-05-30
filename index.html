@@ -6,6 +6,11 @@
     <title>Unity WebGL Player | ShooterDclxviclan</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <script>
+        // Отправляет событие инициализации нативному клиенту
+        vkBridge.send('VKWebAppInit');
+    </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -56,11 +61,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/gitVers4.loader.js";
+      var loaderUrl = buildUrl + "/gitVers5.loader.js";
       var config = {
-        dataUrl: buildUrl + "/gitVers4.data",
-        frameworkUrl: buildUrl + "/gitVers4.framework.js",
-        codeUrl: buildUrl + "/gitVers4.wasm",
+        dataUrl: buildUrl + "/gitVers5.data",
+        frameworkUrl: buildUrl + "/gitVers5.framework.js",
+        codeUrl: buildUrl + "/gitVers5.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "ShooterDclxviclan",
@@ -97,6 +102,7 @@
         canvas.style.height = "600px";
       }
 
+      canvas.style.background = "url('" + buildUrl + "/gitVers5.jpg') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
